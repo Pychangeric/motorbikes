@@ -11,6 +11,19 @@ class UsersController < ApplicationController
       @user = current_user
       @user_profile = @user.user_profile
     end
+
+    def new
+        @user = User.new
+      end
+    
+      def create
+        @user = User.new(user_params)
+        if @user.save
+          # Handle successful user registration
+        else
+          render 'new'
+        end
+    end
   
     def update
       @user = current_user

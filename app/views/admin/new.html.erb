@@ -1,0 +1,9 @@
+<%= form_with(model: Admin.new, url: admins_promote_user_path) do |form| %>
+    <div class="field">
+      <%= form.label :user_identifier, "User Email or Username" %>
+      <%= form.text_field :user_identifier %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Promote to Admin" %>
+    </div>
+  <% end %>
